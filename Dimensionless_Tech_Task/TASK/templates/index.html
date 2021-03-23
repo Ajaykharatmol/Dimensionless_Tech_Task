@@ -1,0 +1,16 @@
+<title>Analysing tooth decay</title>
+
+<form method=post enctype=multipart/form-data>
+  {% csrf_token %}
+  Choose Image
+<input type = "file" name = "chesk_img"></input>
+  Choose XML File
+<input type = "file" name = "xml_file"></input>
+<input type = "submit" value = "Upload"></input>
+</form>
+
+{% if img_path %}
+{% load static %}
+<img src= "{{img_path}}" alt="User Image" height = "auto" width = "50%">
+
+{% endif %}
